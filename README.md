@@ -69,3 +69,5 @@ This repository will fully build a server that will connect to the **kraken rest
   ```
   sudo apt install git
   ```
+  - Verify the installtion with the above command
+  - Next we need to clone the repository so we have everything
