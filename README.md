@@ -39,7 +39,18 @@ This repository will fully build a server that will connect to the **kraken rest
   - Make sure you take the **token access** for your bot
   - You will add your **token** into the config.py file under **telegram_token**
   - You will need the **ID** but we first need to add the bot to our server
-  - Once the bot is on the server we can get the ID
+  - Once the bot is on the server we can get the ID, we will also add to config.py under **telegram_id**
+  - This can be quite frustrating since the telegram api is slow
+  - you will need to open a browser and navigate to the following page, replacing anything in <> for your own
+  - *https://api.telegram.org/bot<telegram_token>/getUpdates*
+  - you will need to refresh the page multiple times, you will see an ID for the bot but you need the ID for the group chat, they always start with -
+  ```
+  "my_chat_member":{"chat":{"id":<group_id>,"title":"BIG_TEST","type":"group","all_members_are_administrators":true},"from":{"id":<bot_id>,"is_bot":false,"first_name":"Albert","last_name":"Brown","language_code":"en"},"date":1707754020,"old_chat_member":{"user":{"id":<group_member_id>,"is_bot":true,"first_name":"BIG_TEST_713","username":"BIG_TEST_713_bot"},"status":"left"},"new_chat_member":{"user":{"id":<group_member_id>,"is_bot":true,"first_name":"BIG_TEST_713","username":"BIG_TEST_713_bot"},"status":"member"}}},{"update_id":241387017,
+"message":{"message_id":12,"from":{"id":<bot_id>,"is_bot":false,"first_name":"Albert","last_name":"Brown","language_code":"en"},"chat":{"id":<group_id>,"title":"BIG_TEST","type":"group","all_members_are_administrators":true},"date":1707754020,"group_chat_created":true}}]}
+```
+- Once your output is looking like this you can put the **group_id** in the config file under **telegram_id**
+- verify your server and bot is working run the file in config called telegram.py
+- you should see a message from your bot on your group chat if it is working
 
 # Configuration
 - This sections assumes you have setup youe **AWS EC2 Instance** using **Ubuntu**
