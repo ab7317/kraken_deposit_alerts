@@ -6,6 +6,7 @@ This repository will fully build a server that will connect to the **kraken rest
 - You will need to use the **AWS CONSOLE** in the browser
 - The instance should be type **t2.micro**
 - It will need 1 elastic IP address
+- This is assuming you have putty configured and can access the ssh service
   
   # Creating the server
   - Login to the **AWS Console**
