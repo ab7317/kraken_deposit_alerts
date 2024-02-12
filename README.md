@@ -61,4 +61,11 @@ This repository will fully build a server that will connect to the **kraken rest
 
   # Setting up the directories
   - Connect to your new instance via **SSH**
-  - we want to run the following commands to properly setup our directories for this server
+  - we want to run the following commands to properly setup our directories for this server, also make sure you are in the correct directory
+  ```
+  git --version
+  ```
+  - If you have git skip the next line, it will only install git on the server
+  ```
+  sudo apt install git
+  ```
