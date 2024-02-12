@@ -60,4 +60,5 @@ This repository will fully build a server that will connect to the **kraken rest
 - You will also need a set of relevant keys for the account
 
   # Setting up the directories
-  - 
+  - Connect to your new instance via **SSH**
+  - we want to run the following commands to properly setup our directories for this server
