@@ -43,7 +43,7 @@ while True:
             print('Sleeping for {config.sleepTime} minutes...\n###################################')
         except Exception as e:
             print(f"There was an error concatinating and removing duplicates:\n{e}\nSleeping for {config.sleepTime} minutes...\n###################################")
-            requests.get(f"https://api.telegram.org/bot{config.telegram_token}/sendMessage?chat_id={config.telegram_id}&text=Error: {e}")
+            #requests.get(f"https://api.telegram.org/bot{config.telegram_token}/sendMessage?chat_id={config.telegram_id}&text=Error: {e}")
         counter += 1
         time.sleep(60*config.sleepTime)
     except Exception as e:
