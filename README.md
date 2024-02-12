@@ -31,7 +31,11 @@ This repository will fully build a server that will connect to the **kraken rest
 
 # Configuration
 - This sections assumes you have setup youe **AWS EC2 Instance** using **Ubuntu**
+- This also assumes that you can login and connect to your instance via **SSH**
 - It will go through setting up the required **Python** and **Service** scripts
 - It will not go through the codes logic or maintanance
 - You will need the servers ip to be whitelisted by kraken
 - You will also need a set of relevant keys for the account
+
+  # Setting up the directories
+  - 
