@@ -28,4 +28,10 @@ This repository will fully build a server that will connect to the **kraken rest
   - From the **Elastic IPs** page select the IP
   - In the **Actions** drop down in the top right click **Associate Elastic IP addresses**
   - You can go back to the **Instances** page and your instance should now have an elastic IP
-  
+
+# Configuration
+- This sections assumes you have setup youe **AWS EC2 Instance** using **Ubuntu**
+- It will go through setting up the required **Python** and **Service** scripts
+- It will not go through the codes logic or maintanance
+- You will need the servers ip to be whitelisted by kraken
+- You will also need a set of relevant keys for the account
