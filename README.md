@@ -29,6 +29,18 @@ This repository will fully build a server that will connect to the **kraken rest
   - In the **Actions** drop down in the top right click **Associate Elastic IP addresses**
   - You can go back to the **Instances** page and your instance should now have an elastic IP
 
+  # Creating the Telegram group
+  - Open telegram and search for **@botfather**
+  - After activating **botfather** send it
+  ```
+  /newbot
+  ```
+  - It will prompt you for a series of information like names folllow its directions
+  - Make sure you take the **token access** for your bot
+  - You will add your **token** into the config.py file under **telegram_token**
+  - You will need the **ID** but we first need to add the bot to our server
+  - Once the bot is on the server we can get the ID
+
 # Configuration
 - This sections assumes you have setup youe **AWS EC2 Instance** using **Ubuntu**
 - This also assumes that you can login and connect to your instance via **SSH**
