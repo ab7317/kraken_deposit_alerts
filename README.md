@@ -61,7 +61,10 @@ This repository will fully build a server that will connect to the **kraken rest
 
   # Setting up the directories
   - Connect to your new instance via **SSH**
-  - we want to run the following commands to properly setup our directories for this server, also make sure you are in the correct directory
+  - we want to run the following commands to properly setup our directories for this server, also make sure you are in the correct directory, you can use the following command to make sure you are
+  ```
+  cd ~
+  ```
   ```
   git --version
   ```
@@ -71,3 +74,37 @@ This repository will fully build a server that will connect to the **kraken rest
   ```
   - Verify the installtion with the above command
   - Next we need to clone the repository so we have everything
+  ```
+  git clone git@github.com:ab7317/kraken_deposit_alerts
+  ```
+  - We will want to navigate into the services directory
+  ```
+  cd ~/kraken_deposit_alerts/services
+  ```
+  - We will want to copy the service we have in there into the correct location so it can run properly
+  - We will edit the file in the next section to ensure it is running
+  ```
+  sudo cp run_scripts.service /etc/systemd/system/
+  ```
+
+  # Configuring scripts
+  - We will start with the configuration script
+  ```
+  sudo nano ~/kraken_deposit_alerts/config.config.py
+  ```
+  - In here you will need to add your **kraken_key kraken_secret telegram_token and telegram_id**
+  - If you do not have all of this information please read through the repository again
+  - Next we need to get our python script working, it will require some non standard modules
+  ```
+  pip install requests
+  ```
+  ```
+  pip install pandas
+  ```
+  - we can now verify our script is working and out config is setup correctly
+  ```
+  cd ~/kraken_deposit_alerts
+  ```
+  ```
+  python3 monitor.py
+  ```
