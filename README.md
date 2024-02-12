@@ -108,3 +108,20 @@ This repository will fully build a server that will connect to the **kraken rest
   ```
   python3 monitor.py
   ```
+  - Once this script is running we will need to setup the service so the script can run without needing the server open
+  ```
+  sudo nano /etc/systemd/system/run_scripts.service
+  ```
+  - We will want to add the full path to the script not **~/** but **/home/<username>/kraken_deposit_alerts**
+  - To start the service we run
+  ```
+  sudo systemctl start run_scripts.service
+  ```
+  ```
+  sudo systemctl status run_scripts.service
+  ```
+  - If the service is running as expected we should be able to see the printed out from the file (should also be seeing telegram alerts as expected)
+  - We can now set the server to run the service on start up so we dont need to worry about manualling starting it after a restart
+  ```
+  sudo systemctl enable run_scripts.service
+  ```
