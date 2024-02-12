@@ -33,9 +33,17 @@ while True:
         dfOriginal = pd.DataFrame(resp['result'])
         print('Dataframes setup correctly')
         try:
-            print(pd.concat([dfOriginal,dfNew]).drop_duplicates(keep=False), 'Sleeping for {config.sleepTime} minutes...\n###################################')
+            #print(pd.concat([dfOriginal,dfNew]).drop_duplicates(keep=False), 'Sleeping for {config.sleepTime} minutes...\n###################################')
+            df = pd.concat([dfx,dfy]).drop_duplicates(keep=False)
+            df = df.to_dict(orient='records')
+            try:
+                requests.get(f"https://api.telegram.org/bot{config.telegram_token}/sendMessage?chat_id={config.telegram_id}&text=New Deposit{df[0]}")
+            except:
+                requests.get(f"https://api.telegram.org/bot{config.telegram_token}/sendMessage?chat_id={config.telegram_id}&text=New Deposit{df[0]}")
+            print('Sleeping for {config.sleepTime} minutes...\n###################################')
         except Exception as e:
             print(f"There was an error concatinating and removing duplicates:\n{e}\nSleeping for {config.sleepTime} minutes...\n###################################")
+            requests.get(f"https://api.telegram.org/bot{config.telegram_token}/sendMessage?chat_id={config.telegram_id}&text=Error: {e}")
         counter += 1
         time.sleep(60*config.sleepTime)
     except Exception as e:
