@@ -34,7 +34,7 @@ while True:
         print('Dataframes setup correctly')
         try:
             #print(pd.concat([dfOriginal,dfNew]).drop_duplicates(keep=False), 'Sleeping for {config.sleepTime} minutes...\n###################################')
-            df = pd.concat([dfx,dfy]).drop_duplicates(keep=False)
+            df = pd.concat([dfNew,dfOriginal]).drop_duplicates(keep=False)
             df = df.to_dict(orient='records')
             try:
                 requests.get(f"https://api.telegram.org/bot{config.telegram_token}/sendMessage?chat_id={config.telegram_id}&text=New Deposit{df[0]}")
