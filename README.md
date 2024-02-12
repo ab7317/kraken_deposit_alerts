@@ -1,5 +1,5 @@
 # kraken_deposit_alerts
-This repository will fully build a server that will connect to the **kraken rest api**. The server will check the ednpoint **https://api.kraken.com/0/private/DepositStatus** every 5 minutes. Please check the **Kraken Documentation** for more details: https://docs.kraken.com/rest/#tag/Account-Data/operation/getTradeVolume. If there is any new deposits o changes the server will send an alert message to a **Telegram** chat. Following the repository will take you through setting up the aws instances, writing the code and setting up the telegram group.
+This repository will fully build a server that will connect to the **kraken rest api**. The server will check the ednpoint *https://api.kraken.com/0/private/DepositStatus* every 5 minutes. Please check the **Kraken Documentation** for more details: *https://docs.kraken.com/rest/#tag/Account-Data/operation/getTradeVolume*. If there is any new deposits o changes the server will send an alert message to a **Telegram** chat. Following the repository will take you through setting up the aws instances, writing the code and setting up the telegram group.
 
 # Setup
 - This will use a **AWS EC2** instance
