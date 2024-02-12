@@ -1,0 +1,11 @@
+[Unit]
+Description=Runs the python script to check for differences in kraken deposits
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 <path to script>
+WorkingDirectory=<path to directory>
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
