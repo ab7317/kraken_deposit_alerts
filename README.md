@@ -9,13 +9,16 @@ This repository will fully build a server that will connect to the **kraken rest
   
   # Creating the server
   - Login to the **AWS Console**
-  - check in the top right corner your in the correct region
+  - Check in the top right corner your in the correct region
   - In the search bar search **EC2** click the first option
   - Navigate to the **Instances** tab
-  - click **Launch instances** in the top right corner
+  - Click **Launch instances** in the top right corner
   - Select the latest version of **ubuntu** for the **AMI**
   - Architecture must be **64-bit (x86)**
-  - 
+  - Ensure instance type is set to **t2.micro**
+  - For **Key pair** create a new one
+  - Now select **Launch instance** on the right side
+  - The instance may take some time
   
   # Adding Elastic IP to instance
   - Select **Elastic IPs** in the **EC2 Dashboard**
@@ -24,3 +27,4 @@ This repository will fully build a server that will connect to the **kraken rest
   - From the **Elastic IPs** page select the IP
   - In the **Actions** drop down in the top right click **Associate Elastic IP addresses**
   - You can go back to the **Instances** page and your instance should now have an elastic IP
+  
