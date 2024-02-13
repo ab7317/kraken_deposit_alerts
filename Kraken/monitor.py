@@ -56,11 +56,13 @@ while True:
             startSleep = time.time()
             print(f"Sleeping for {config.sleepTime} minutes\nSleep starting at: {datetime.datetime.fromtimestamp(startSleep).strftime('%H:%M:%S')}\nSleep finishing at: {datetime.datetime.fromtimestamp(startSleep+300).strftime('%H:%M:%S')}\n###################################")
         except Exception as e:
+            requests.get(f"https://api.telegram.org/bot{config.telegram_error_token}/sendMessage?chat_id={config.telegram_error_id}&text=Error: {e}")
             startSleep = time.time()
             print(f"There was an error concatinating and removing duplicates:\n{e}\nSleeping for {config.sleepTime} minutes\nSleep starting at: {datetime.datetime.fromtimestamp(startSleep).strftime('%H:%M:%S')}\nSleep finishing at: {datetime.datetime.fromtimestamp(startSleep+300).strftime('%H:%M:%S')}\n###################################")
             #requests.get(f"https://api.telegram.org/bot{config.telegram_token}/sendMessage?chat_id={config.telegram_id}&text=Error: {e}")
         counter += 1
         time.sleep(60*config.sleepTime)
     except Exception as e:
+        requests.get(f"https://api.telegram.org/bot{config.telegram_error_token}/sendMessage?chat_id={config.telegram_error_id}&text=Error: {e}")
         print(f"Failed to send request with error:\n{e}\nRetrying...")
         counter += 1
