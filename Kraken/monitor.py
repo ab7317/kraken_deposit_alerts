@@ -35,6 +35,14 @@ while True:
         print('Request sent succesfully')
         dfNew = dfOriginal
         dfOriginal = pd.DataFrame(resp['result'])
+        try:
+            dfNew = dfNew.drop(columns=['originators'])
+        except:
+            pass
+        try:
+            dfOriginal = dfOriginal.drop(columns=['originators'])
+        except: 
+            pass
         print('Dataframes setup correctly')
         try:
             #print(pd.concat([dfOriginal,dfNew]).drop_duplicates(keep=False), 'Sleeping for {config.sleepTime} minutes\nSleep starting at: {datetime.datetime.fromtimestamp(startSleep).strftime('%H:%M:%S')}\n###################################')
