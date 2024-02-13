@@ -40,10 +40,11 @@ while True:
             #print(pd.concat([dfOriginal,dfNew]).drop_duplicates(keep=False), 'Sleeping for {config.sleepTime} minutes\nSleep starting at: {datetime.datetime.fromtimestamp(startSleep).strftime('%H:%M:%S')}\n###################################')
             df = pd.concat([dfNew,dfOriginal]).drop_duplicates(keep=False)
             df = df.to_dict(orient='records')
-            try:
-                requests.get(f"https://api.telegram.org/bot{config.telegram_token}/sendMessage?chat_id={config.telegram_id}&text=New Deposit{df}")
-            except:
-                requests.get(f"https://api.telegram.org/bot{config.telegram_token}/sendMessage?chat_id={config.telegram_id}&text=New Deposit{df}")
+            if len(df) != 0:
+                try:
+                    requests.get(f"https://api.telegram.org/bot{config.telegram_token}/sendMessage?chat_id={config.telegram_id}&text=New Deposit{df}")
+                except:
+                    requests.get(f"https://api.telegram.org/bot{config.telegram_token}/sendMessage?chat_id={config.telegram_id}&text=New Deposit{df}")
             startSleep = time.time()
             print(f"Sleeping for {config.sleepTime} minutes\nSleep starting at: {datetime.datetime.fromtimestamp(startSleep).strftime('%H:%M:%S')}\nSleep finishing at: {datetime.datetime.fromtimestamp(startSleep+300).strftime('%H:%M:%S')}\n###################################")
         except Exception as e:
