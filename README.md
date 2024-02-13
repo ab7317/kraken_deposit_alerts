@@ -95,6 +95,13 @@ This repository will fully build a server that will connect to the **kraken rest
   - In here you will need to add your **kraken_key kraken_secret telegram_token and telegram_id**
   - If you do not have all of this information please read through the repository again
   - Next we need to get our python script working, it will require some non standard modules
+  - if pip is not installed run the following commands
+  ```
+  sudo apt-get update
+  ```
+  ```
+  sudo apt-get install python3-pip
+  ```
   ```
   pip install requests
   ```
