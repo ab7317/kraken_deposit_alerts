@@ -90,7 +90,7 @@ This repository will fully build a server that will connect to the **kraken rest
   # Configuring scripts
   - We will start with the configuration script
   ```
-  sudo nano ~/kraken_deposit_alerts/config.config.py
+  sudo nano ~/kraken_deposit_alerts/config.py
   ```
   - In here you will need to add your **kraken_key kraken_secret telegram_token and telegram_id**
   - If you do not have all of this information please read through the repository again
