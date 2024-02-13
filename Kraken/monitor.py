@@ -1,7 +1,7 @@
 import requests, hmac, hashlib, base64, time, urllib.parse, sys, datetime
 import pandas as pd
 
-sys.path.append('config/')
+sys.path.append('/home/ubuntu/kraken_deposists_alerts/config/')
 import config
 
 startTime = time.time()
