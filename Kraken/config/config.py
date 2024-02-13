@@ -5,3 +5,5 @@ endpoint = '/0/private/DepositStatus'
 sleepTime = 5 #Integers for time in minutes
 telegram_token = ''
 telegram_id = ''
+telegram_error_token = ''
+telegram_error_id = ''
