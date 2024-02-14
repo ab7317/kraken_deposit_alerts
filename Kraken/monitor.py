@@ -51,10 +51,8 @@ while True:
             df = pd.concat([dfNew,dfOriginal]).drop_duplicates(keep=False)
             df = df.to_dict(orient='records')
             if len(df) != 0:
-                try:
-                    requests.get(f"https://api.telegram.org/bot{config.telegram_token}/sendMessage?chat_id={config.telegram_id}&text=New Deposit{df}")
-                except:
-                    requests.get(f"https://api.telegram.org/bot{config.telegram_token}/sendMessage?chat_id={config.telegram_id}&text=New Deposit{df}")
+                for i in df:
+                    requests.get(f"https://api.telegram.org/bot{confi.telegram_token}/sendMessage?chat_id={confi.telegram_id}&text=New Deposit Asset: {i['asset']}\nAmount: {i['amount']}\nTxId: {i['txid']}\nTime: {datetime.datetime.fromt>
             startSleep = time.time()
             print(f"Sleeping for {config.sleepTime} minutes\nSleep starting at: {datetime.datetime.fromtimestamp(startSleep).strftime('%H:%M:%S')}\nSleep finishing at: {datetime.datetime.fromtimestamp(startSleep+300).strftime('%H:%M:%S')}\n###################################")
         except Exception as e:
