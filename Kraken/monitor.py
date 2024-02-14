@@ -36,11 +36,13 @@ while True:
         dfNew = dfOriginal
         dfOriginal = pd.DataFrame(resp['result'])
         try:
-            dfNew = dfNew.drop(columns=['originators'])
+            #dfNew = dfNew.drop(columns=['originators'])
+            dfNew = dfNew[['asset', 'txid', 'amount', 'time']]
         except:
             pass
         try:
-            dfOriginal = dfOriginal.drop(columns=['originators'])
+            #dfOriginal = dfOriginal.drop(columns=['originators'])
+            dfOriginal = dfOriginal[['asset', 'txid', 'amount', 'time']]
         except: 
             pass
         print('Dataframes setup correctly')
