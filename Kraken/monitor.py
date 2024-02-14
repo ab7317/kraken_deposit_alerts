@@ -21,7 +21,7 @@ def kraken_request(uri_path, data):
     req = requests.post((config.url + uri_path), headers=headers, data=data)
     return req.json()
 
-dfOriginal = pd.DataFrame()
+dfOriginal = pd.read_csv('newest_deposit.csv')
 counter = 0
 
 print(f"Initial start time: {datetime.datetime.fromtimestamp(startTime).strftime('%H:%M:%S')}")
