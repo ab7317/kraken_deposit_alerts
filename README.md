@@ -132,3 +132,15 @@ This repository will fully build a server that will connect to the **kraken rest
   ```
   sudo systemctl enable run_scripts.service
   ```
+
+# Code
+  # Service file
+  - the service file is a **.service**
+  - this allows it to run a service on the server
+  - if we point the path of the service to run our python script
+  - then we wont need to be online for it to run and we can leave the server
+
+  # Python script
+  - There are 2 python files
+  - confi.py and monitor.py
+  - 
