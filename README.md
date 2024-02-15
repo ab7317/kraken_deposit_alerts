@@ -136,11 +136,39 @@ This repository will fully build a server that will connect to the **kraken rest
 # Code
   # Service file
   - the service file is a **.service**
-  - this allows it to run a service on the server
+  - this allows it to run a service on the servertghi
   - if we point the path of the service to run our python script
   - then we wont need to be online for it to run and we can leave the server
 
   # Python script
   - There are 2 python files
   - confi.py and monitor.py
+  - confi.py is a configuration file where you add variables and keys
+  - this section will continue explaining how monitor.py works
+  - the script works all within a **while** loop, only preforming setup code before then
+  - The only notable setup code is that it runs a pandas function to read a csv of the last deposit so it stays up to date
+  - Inside the loop we start by sending the request for new data from **krakens** api
+  - Next we re organise dataframes so the old data frame is moved from new to old
+  - both dataframes are then cleanedup so they can be compared
+  - Instead of using the **comapare** pandas function we use the **concat** with **.drop_duplicates(keep=False)**
+  - This returns us a dataframe of the different elements between the dataframes
+  - Finsally we transform the dataframe to a **dictionary** so we can parse it and send it to the telegram group
+  - Telegram uses an api that reads get and post requests to route messages through a bot and onto a server
+  - The code also has error messages and try and catches to ensure it will keep running
+  - and if it does encounter an error it will alert an error groupchat but continue to restart itself
+
+# Restarting and Debugging
+  # Restarting
+  - Sicne the server contains 2 seperate running scripts
+  - Make sure both scripts are okay to restart, you can check the other script here *https://github.com/ab7317/openpayd_alerts*
+  - Both scripts are run with system services, so all we need to do for a **Complete Restart**
+  - Is go to the **AWS EC2 Dashboard** locate your **Instance** and click **Reboot** in **Actions**
+  - wait for the server to say it is running then go back into the server ssh and run the following command
+  ```
+  systemctl status run_scripts.service
+  ```
+  - You should see a message appear saying the script is active this means it is running
+  - If you see any message saying **Failed** read the debugging section
+
+  # Debugging
   - 
